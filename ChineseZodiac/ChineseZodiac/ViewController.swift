@@ -12,7 +12,7 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var yearOfBorn: UITextField!
     @IBOutlet weak var zodiacImage: UIImageView!
-    let zodiac_:[String] = ["8", "9", "10", "11", "0", "1", "2", "3", "4", "5", "6", "7"]
+    let letZodiac:[String] = ["8", "9", "10", "11", "0", "1", "2", "3", "4", "5", "6", "7"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +27,7 @@ class ViewController: UIViewController {
     @IBAction func showMyZodiac(sender: AnyObject) {
         yearOfBorn.resignFirstResponder()
         if let year = yearOfBorn.text.toInt() {
-            zodiacImage.image = UIImage(named: zodiac_[year % zodiac_.count])
+            zodiacImage.image = UIImage(named: letZodiac[year % letZodiac.count])
         } else {
             println("error number!")
         }
